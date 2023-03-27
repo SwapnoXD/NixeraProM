@@ -23,8 +23,8 @@ HELP_TEXT = """
 """
 
 HELP_BUTTON = [[
-        InlineKeyboardButton('ANIME', callback_data='anime_help'),
-        InlineKeyboardButton('ADMIN', callback_data='admin_help'),
+        InlineKeyboardButton('Admin', callback_data='admin_help'),
+        InlineKeyboardButton('Greetings', callback_data='anime_help'),
         InlineKeyboardButton('NEKOS', callback_data='nekos_help'),
         ],[
         InlineKeyboardButton('NSFW', callback_data='nsfw_help'),
