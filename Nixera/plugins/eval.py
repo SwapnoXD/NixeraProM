@@ -10,7 +10,6 @@ from pyrogram import *
 from pyrogram.types import *
 from Nixera import *
 COMMANDS = [".","?","/","!","$","#","~",]
-OWNER = 1626505310
 
 async def aexec(code, client, message):
     exec(
@@ -27,8 +26,7 @@ def sh(_, m):
             "https://telegra.ph/file/968b0c048e41f0bf75301.jpg", caption=f"**SHELL**: `{code}`\n\n**OUTPUT**:\n`{x}`")
         if len(m.command) <2:
            msg.edit_caption("`Give A Command To Run...`")    
-    else:
-        return
+
    
 @app.on_message(filters.command("eval",COMMANDS))
 async def eval(client, message):
