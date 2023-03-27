@@ -9,41 +9,13 @@ from pyrogram.enums import ChatType
 from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
-from nandhabot import bot, SUPPORT_CHAT, BOT_USERNAME
-from nandhabot.plugins.dev_user import get_readable_time
+from Nixera import app, SUPPORT_CHAT, BOT_USERNAME
 from pyrogram.types import CallbackQuery
 
 BOT_IMG = ("https://telegra.ph/file/239a076932e0a047f715e.jpg",
                        "https://telegra.ph/file/2cb897995025e09fa14c9.jpg")
 
-
-@bot.on_message(filters.command("alive"))
-async def alive(_, m: Message):
-    user = m.from_user
-    uptime = get_readable_time((time.time() - StartTime))
-    msg = await m.reply_text("Initialising")
-    await msg.edit("Initialising ✪●●●●●")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪●●●●")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪●●●")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪✪●●")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪✪✪●")
-    time.sleep(1)
-    await msg.edit("Initialising ✪✪✪✪✪✪")
-    time.sleep(1)
-    await msg.edit("✪︎Connection Successful✪")
-    pm_caption = f"** ♡ Hey [{user.first_name}](tg://user?id={user.id}) \nI,m Vegeta ✨ **\n\n"
-    pm_caption += f"**♡ My Uptime :** `{uptime}`\n\n"
-    pm_caption += f"**♡ Telethon Version :** `{telethon_version}`\n\n"
-    pm_caption += f"**♡ Pyrogram Version :** `{pyrogram_version}`\n\n"
-    pm_caption += "**♡ My Master :** [Nandha](https://t.me/nandhaxd) "
-    await msg.edit_text(text=(pm_caption),disable_web_page_preview=True)
-
-           
-
+        
    
 HELP_TEXT = """
 **Hello Dear**!
@@ -68,18 +40,18 @@ HELP_BUTTON = [[
         InlineKeyboardButton('TOOLS', callback_data='tools_help')]]
 
          
-@bot.on_message(filters.command(["help"], ["/", ".", "?"]))
+@app.on_message(filters.command(["help"], ["/", ".", "?"]))
 async def start(_, m: Message):
    await m.reply_photo(random.choice(BOT_IMG),caption=HELP_TEXT.format(m.from_user.mention),
                       reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
            
   
-@bot.on_callback_query(filters.regex("help_back"))
+@app.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
     await query.message.edit_caption(HELP_TEXT,
                                     reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
                
-@bot.on_callback_query(filters.regex("close"))
+@app.on_callback_query(filters.regex("close"))
 async def close(_, query: CallbackQuery):
            query = query.message
            await query.delete()
@@ -98,7 +70,7 @@ BUTTON = [[InlineKeyboardButton("back 🔙", callback_data="help_back"),
             InlineKeyboardButton("close 🗑", callback_data='close'),]]
 
 
-@bot.on_callback_query(filters.regex("anime_help"))
+@app.on_callback_query(filters.regex("anime_help"))
 async def animehelp(_, query: CallbackQuery):
      await query.message.edit_caption(ANIME_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -110,7 +82,7 @@ user info chat info:
 • /json - full intention about user & chat.
 """
 
-@bot.on_callback_query(filters.regex("userinfo_help"))
+@app.on_callback_query(filters.regex("userinfo_help"))
 async def userinfohelp(_, query: CallbackQuery):
      await query.message.edit_caption(USERINFO_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -129,7 +101,7 @@ usage of admin cmds:
 • /rgpic - remove group pic.
 """
 
-@bot.on_callback_query(filters.regex("admin_help"))
+@app.on_callback_query(filters.regex("admin_help"))
 async def adminhelp(_, query: CallbackQuery):
      await query.message.edit_caption(ADMIN_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -151,7 +123,7 @@ pout, handhold, wave,
 cuddle, poke, shrug
 """
 
-@bot.on_callback_query(filters.regex("nekos_help"))
+@app.on_callback_query(filters.regex("nekos_help"))
 async def sfwhelp(_, query: CallbackQuery):
      await query.message.edit_caption(NEKOS_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -170,7 +142,7 @@ using: Waifu.pics
 • /pussy - get smile pussy img.
 """
 
-@bot.on_callback_query(filters.regex("nsfw_help"))
+@app.on_callback_query(filters.regex("nsfw_help"))
 async def nsfwhelp(_, query: CallbackQuery):
      await query.message.edit_caption(NSFW_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -194,7 +166,7 @@ MISC_TEXT = """
 /share: reply to msg get share link.
 """
 
-@bot.on_callback_query(filters.regex("misc_help"))
+@app.on_callback_query(filters.regex("misc_help"))
 async def mischelp(_, query: CallbackQuery):
      await query.message.edit_caption(MISC_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -206,7 +178,7 @@ MEME_TEXT = """
 /joke: read some random jokes.
 """
 
-@bot.on_callback_query(filters.regex("meme_help"))
+@app.on_callback_query(filters.regex("meme_help"))
 async def memehelp(_, query: CallbackQuery):
      await query.message.edit_caption(MEME_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -217,7 +189,7 @@ STICKER_TEXT = """
 /stickerid: reply to sticker to get I'd.
 /gifid: reply to gif for get gif I'd 
 """
-@bot.on_callback_query(filters.regex("sticker_help"))
+@app.on_callback_query(filters.regex("sticker_help"))
 async def stickerhelp(_, query: CallbackQuery):
      await query.message.edit_caption(STICKER_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -234,7 +206,7 @@ FUN_TEXT = """
 /love: animation love story. 
 """
 
-@bot.on_callback_query(filters.regex("fun_help"))
+@app.on_callback_query(filters.regex("fun_help"))
 async def funhelp(_, query: CallbackQuery):
      await query.message.edit_caption(FUN_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -248,7 +220,7 @@ DEV_TEXT = """
 /pyupload: get plugins document type.
 /devlist: list of developer.
 """
-@bot.on_callback_query(filters.regex("dev_help"))
+@app.on_callback_query(filters.regex("dev_help"))
 async def devhelp(_, query: CallbackQuery):
      await query.message.edit_caption(DEV_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
@@ -264,7 +236,7 @@ TOOLS_TEXT = """
 /countryinfo {text}: generate country information.
 /github {text}: github user profile information.
 """
-@bot.on_callback_query(filters.regex("tools_help"))
+@app.on_callback_query(filters.regex("tools_help"))
 async def toolshelp(_, query: CallbackQuery):
      await query.message.edit_caption(TOOLS_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
