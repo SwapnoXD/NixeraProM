@@ -10,6 +10,7 @@ API_ID = Config.API_ID
 API_HASH = Config.API_HASH
 TOKEN = Config.BOT_TOKEN
 OWNER_ID = Config.OWNER_ID
+COMMANDS = Config.COMMANDS
 START_PIC = Config.START_PIC
 if not START_PIC:
     START_PIC = "https://graph.org/file/c1c19fee2ac7b458087f7.jpg"
