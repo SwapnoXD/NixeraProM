@@ -9,7 +9,7 @@ from pyrogram.enums import ChatType
 from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
-from Nixera import app, SUPPORT_CHAT, BOT_USERNAME
+from Nixera import app
 from pyrogram.types import CallbackQuery
 
 BOT_IMG = ("https://telegra.ph/file/239a076932e0a047f715e.jpg",
