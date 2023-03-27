@@ -10,7 +10,7 @@ from pyrogram import *
 from pyrogram.types import *
 from Nixera import *
 COMMANDS = [".","?","/","!","$","#","~",]
-OWNER = "162650510"
+OWNER = '1626505310'
 
 async def aexec(code, client, message):
     exec(
