@@ -24,7 +24,7 @@ HELP_TEXT = """
 
 HELP_BUTTON = [[
         InlineKeyboardButton('Admin', callback_data='admin_help'),
-        InlineKeyboardButton('Greetings', callback_data='anime_help'),
+        InlineKeyboardButton('Greetings', callback_data='greet_help'),
         InlineKeyboardButton('NEKOS', callback_data='nekos_help'),
         ],[
         InlineKeyboardButton('NSFW', callback_data='nsfw_help'),
@@ -54,16 +54,14 @@ GREET_BUTTON = [[
         InlineKeyboardButton('Welcome Section', callback_data='anime_help'),
         InlineKeyboardButton('Welcome Mute', callback_data='nekos_help'),
         ],[
-        InlineKeyboardButton('NSFW', callback_data='nsfw_help'),
-        InlineKeyboardButton('MISC', callback_data='misc_help'),
-        InlineKeyboardButton('INFO', callback_data='userinfo_help'),
+        InlineKeyboardButton('Buttons Help', callback_data='nsfw_help'),
+        InlineKeyboardButton('Variables Help', callback_data='misc_help'),
+        InlineKeyboardButton('Examples', callback_data='userinfo_help'),
         ],[
-        InlineKeyboardButton('MEME', callback_data='meme_help'),
-        InlineKeyboardButton('FUN', callback_data='fun_help'),
-        InlineKeyboardButton('SG', callback_data='sticker_help'),
+        InlineKeyboardButton('Clean Services/Purges', callback_data='meme_help'),
         ],[
-        InlineKeyboardButton('DEV', callback_data='dev_help'),
-        InlineKeyboardButton('TOOLS', callback_data='tools_help')]]
+        InlineKeyboardButton('back 🔙', callback_data='help_back'),
+        InlineKeyboardButton('close 🗑', callback_data='close')]]
 
 
          
@@ -268,22 +266,14 @@ async def toolshelp(_, query: CallbackQuery):
      await query.message.edit_caption(TOOLS_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
 GREET_TEXT = """
-TOOLS_TEXT = """
 Give your members a warm welcome with the greetings module! Also available some security systems...!
 
 **Click below buttons to get available commands**
 """
-@app.on_callback_query(filters.regex("tools_help"))
+@app.on_callback_query(filters.regex("greet_help"))
 async def toolshelp(_, query: CallbackQuery):
-     await query.message.edit_caption(TOOLS_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
-
-
-"""
-@app.on_callback_query(filters.regex("tools_help"))
-async def toolshelp(_, query: CallbackQuery):
-     await query.message.edit_caption(TOOLS_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
+     await query.message.edit_caption(GREET_TEXT,
+                                      reply_markup=InlineKeyboardMarkup(GREET_BUTTON),)
 
 
 
