@@ -18,9 +18,8 @@ BOT_IMG = ("https://telegra.ph/file/239a076932e0a047f715e.jpg",
         
    
 HELP_TEXT = """
-**Hello Dear**!
-**I'm prince Vegeta I will manage your groups and make your group joyful bellow check my
-help and commands!**
+**Hello Dear**
+**Every possibility commands of Nixera is documented here. Click below buttons to get help**
 """
 
 HELP_BUTTON = [[
