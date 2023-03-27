@@ -9,7 +9,7 @@ from Nixera.plugins import ALL_MODULES
 async def start_bot():
     for all_module in ALL_MODULES:
         importlib.import_module("Nixera.plugins." + all_module)
-    LOG.print("[bold yellow]Vixera Started.")
+    LOG.print("[bold yellow]Vixera is starting.")
     await idle() 
     LOG.print("[bold red]Vixera Started Successfully.")
 
