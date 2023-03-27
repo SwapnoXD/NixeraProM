@@ -39,6 +39,23 @@ HELP_BUTTON = [[
         InlineKeyboardButton('DEV', callback_data='dev_help'),
         InlineKeyboardButton('TOOLS', callback_data='tools_help')]]
 
+ADMIN_BUTTON = [[
+        InlineKeyboardButton('Super', callback_data='anime_help'),
+        InlineKeyboardButton('AHim', callback_data='admin_help'),
+        InlineKeyboardButton('NJjd', callback_data='nekos_help'),
+        ],[
+        InlineKeyboardButton('NSFW', callback_data='nsfw_help'),
+        InlineKeyboardButton('MISC', callback_data='misc_help'),
+        InlineKeyboardButton('INFO', callback_data='userinfo_help'),
+        ],[
+        InlineKeyboardButton('MEME', callback_data='meme_help'),
+        InlineKeyboardButton('FUN', callback_data='fun_help'),
+        InlineKeyboardButton('Pin', callback_data='sticker_help'),
+        ],[
+        InlineKeyboardButton('back 🔙', callback_data='help_back'),
+        InlineKeyboardButton('close 🗑', callback_data='close')]]
+
+
          
 @app.on_message(filters.command(["help"], ["/", ".", "?"]))
 async def start(_, m: Message):
@@ -104,7 +121,7 @@ usage of admin cmds:
 @app.on_callback_query(filters.regex("admin_help"))
 async def adminhelp(_, query: CallbackQuery):
      await query.message.edit_caption(ADMIN_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
+                                      reply_markup=InlineKeyboardMarkup(ADMIN_BUTTON),)
 NEKOS_TEXT = """
 anime themed sfw:
 **image:**
