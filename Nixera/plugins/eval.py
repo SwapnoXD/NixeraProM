@@ -9,6 +9,7 @@ from subprocess import getoutput as run
 from pyrogram import *
 from pyrogram.types import *
 from Nixera import *
+COMMANDS = [".","?","/","!","$","#","~",]
 
 async def aexec(code, client, message):
     exec(
@@ -17,7 +18,7 @@ async def aexec(code, client, message):
     )
     return await locals()["__aexec"](client, message)
 
-@app.on_message(filters.command("sh",config.COMMANDS))
+@app.on_message(filters.command("sh",COMMANDS))
 def sh(_, m):
     if m.from_user.id in config.OWNER_ID:
         code = m.text.replace(m.text.split(" ")[0], "")
@@ -29,7 +30,7 @@ def sh(_, m):
     else:
         return
    
-@app.on_message(filters.user(config.OWNER_ID) & filters.command("eval",config.COMMANDS))
+@app.on_message(filters.user(config.OWNER_ID) & filters.command("eval",COMMANDS))
 async def eval(client, message):
     status_message = await message.reply_text("Processing ...")
     if len(message.command) <2:
