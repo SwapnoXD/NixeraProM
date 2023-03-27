@@ -28,3 +28,4 @@ pyshorteners
 yt_dlp
 youtube_search
 wget
+rich
