@@ -6,8 +6,8 @@ from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
 from bs4 import BeautifulSoup
 
 
-texts = json.load(open('src/texts.json', 'r'))
-data = json.load(open('src/pkmn.json', 'r'))
+texts = json.load(open('Nixera/plugins/texts.json', 'r'))
+data = json.load(open('Nixera/plugins/pkmn.json', 'r'))
 
 
 def bot_action(app, message, text, markup):
