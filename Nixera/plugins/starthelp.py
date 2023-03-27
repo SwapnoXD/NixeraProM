@@ -251,3 +251,23 @@ TOOLS_TEXT = """
 async def toolshelp(_, query: CallbackQuery):
      await query.message.edit_caption(TOOLS_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
+GREET_TEXT = """
+TOOLS_TEXT = """
+Give your members a warm welcome with the greetings module! Also available some security systems...!
+
+**Click below buttons to get available commands**
+"""
+@app.on_callback_query(filters.regex("tools_help"))
+async def toolshelp(_, query: CallbackQuery):
+     await query.message.edit_caption(TOOLS_TEXT,
+                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
+
+
+"""
+@app.on_callback_query(filters.regex("tools_help"))
+async def toolshelp(_, query: CallbackQuery):
+     await query.message.edit_caption(TOOLS_TEXT,
+                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
+
+
+
