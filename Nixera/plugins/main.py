@@ -5,23 +5,17 @@ from pyrogram import Client, Filters
 from pyrogram import (InlineKeyboardMarkup,
                       InlineKeyboardButton,
                       CallbackQuery)
+from Nixera import app
+
 
 import functions as func
 import raid_dynamax as raid
 
-from Config import Config
 
-app = Client(
-    api_id=Config.aid,
-    api_hash=Config.ahash,
-    bot_token=Config.bot_token,
-    session_name='inhunmanDexBot'
-)
-
-texts = json.load(open('src/texts.json', 'r'))
-data = json.load(open('src/pkmn.json', 'r'))
-stats = json.load(open('src/stats.json', 'r'))
-jtype = json.load(open('src/type.json', 'r'))
+texts = json.load(open('Nixera/plugins/texts.json', 'r'))
+data = json.load(open('Nixera/plugins/pkmn.json', 'r'))
+stats = json.load(open('Nixera/plugins/stats.json', 'r'))
+jtype = json.load(open('Nixera/plugins/type.json', 'r'))
 
 usage_dict = {'vgc': None}
 raid_dict = {}
@@ -54,7 +48,7 @@ def get_bot_data(app, message):
             pass
         stats['groups'][cid]['members'] = app.get_chat(cid).members_count
 
-    json.dump(stats, open('src/stats.json', 'w'), indent=4)
+    json.dump(stats, open('Nixera/plugins/stats.json', 'w'), indent=4)
     print(stats)
     print('\n\n')
     message.continue_propagation()
