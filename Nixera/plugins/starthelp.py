@@ -40,17 +40,12 @@ HELP_BUTTON = [[
         InlineKeyboardButton('TOOLS', callback_data='tools_help')]]
 
 ADMIN_BUTTON = [[
-        InlineKeyboardButton('Super', callback_data='anime_help'),
-        InlineKeyboardButton('AHim', callback_data='admin_help'),
-        InlineKeyboardButton('NJjd', callback_data='nekos_help'),
+        InlineKeyboardButton('Promote', callback_data='anime_help'),
+        InlineKeyboardButton('Disable', callback_data='admin_help'),
+        InlineKeyboardButton('Pin', callback_data='nekos_help'),
         ],[
-        InlineKeyboardButton('NSFW', callback_data='nsfw_help'),
-        InlineKeyboardButton('MISC', callback_data='misc_help'),
-        InlineKeyboardButton('INFO', callback_data='userinfo_help'),
-        ],[
-        InlineKeyboardButton('MEME', callback_data='meme_help'),
-        InlineKeyboardButton('FUN', callback_data='fun_help'),
-        InlineKeyboardButton('Pin', callback_data='sticker_help'),
+        InlineKeyboardButton('Info', callback_data='nsfw_help'),
+        InlineKeyboardButton('Mute', callback_data='misc_help'),
         ],[
         InlineKeyboardButton('back 🔙', callback_data='help_back'),
         InlineKeyboardButton('close 🗑', callback_data='close')]]
