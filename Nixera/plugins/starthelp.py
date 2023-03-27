@@ -11,7 +11,6 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeybo
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from Nixera import app
 from pyrogram.types import CallbackQuery
-from telegram import ParseMode
 
 BOT_IMG = ("https://telegra.ph/file/239a076932e0a047f715e.jpg",
                        "https://telegra.ph/file/2cb897995025e09fa14c9.jpg")
@@ -226,7 +225,7 @@ FUN_TEXT = """
 
 @app.on_callback_query(filters.regex("fun_help"))
 async def funhelp(_, query: CallbackQuery):
-     await query.message.edit_caption(FUN_TEXT,parse_mode='html',
+     await query.message.edit_caption(FUN_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
 
 DEV_TEXT = """
