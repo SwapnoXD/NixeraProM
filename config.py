@@ -6,4 +6,4 @@ class Config:
     COMMANDS = [".","?","/","!","$","#","~",]
     START_PIC = "" #not necessary 
 
-    #config
+    #config jm
