@@ -1,6 +1,6 @@
 emoji
 bs4
-bing_image_downloader
+
 aiohttp
 uvloop
 pyrogram
