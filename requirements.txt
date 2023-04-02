@@ -26,4 +26,3 @@ safoneapi
 opencv-python-headless
 pyshorteners
 wget
-rich
