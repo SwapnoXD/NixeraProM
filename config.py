@@ -5,3 +5,5 @@ class Config:
     OWNER_ID = 1626505310 #id of the owner 
     COMMANDS = [".","?","/","!","$","#","~",]
     START_PIC = "" #not necessary 
+
+    #config
