@@ -7,7 +7,7 @@ pyrogram
 pillow
 requests
 dnspython
-tgcrypto
+
 typing
 telethon==1.25.0
 telegraph
