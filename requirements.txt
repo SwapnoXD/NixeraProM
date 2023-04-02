@@ -1,5 +1,5 @@
 emoji
-bs4
+bsgo
 safoneap
 aiohttp
 uvloop
@@ -8,7 +8,7 @@ pillow
 requests
 dnspython
 
-typing
+typmemeing
 telethon==1.25.0
 telegraph
 Python_ARQ
