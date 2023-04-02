@@ -11,7 +11,7 @@ async def start_bot():
         importlib.import_module("Nixera.plugins." + all_module)
     LOG.print("[bold yellow]Vixera is starting.")
     await idle() 
-    LOG.print("[bold red]Vixera Started Successfully.")
+    LOG.print("[bold red]Vixera Started Successfully and functioning.")
 
 
 
