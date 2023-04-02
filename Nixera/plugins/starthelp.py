@@ -47,7 +47,7 @@ ADMIN_BUTTON = [[
         InlineKeyboardButton('Mute', callback_data='misc_help'),
         ],[
         InlineKeyboardButton('back 🔙', callback_data='help_back'),
-        InlineKeyboardButton('close 🗑', callback_data='close')]
+        InlineKeyboardButton('close 🗑', callback_data='close')]]
 
 GREET_BUTTON = [[
         InlineKeyboardButton('General', callback_data='admin_help'),
