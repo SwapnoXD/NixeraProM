@@ -1,5 +1,5 @@
 emoji
-bs4
+bsgo
 safoneap
 aiohttp
 uvloop
